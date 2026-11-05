@@ -6,6 +6,17 @@
     <title>{% block title %}Home{% endblock %} - Flashcards</title>
 </head>
 <body>
+    <header>
+        {# TODO: Create menu UI #}
+        {% if request.endpoint != 'login' %}
 
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        {# TODO: Create footer #}
+    </footer>
 </body>
 </html>
