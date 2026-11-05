@@ -7,30 +7,30 @@ db_session = scoped_session(sessionmaker(bind=engine))
 
 Base = declarative_base()
 
-class Usuario(Base):
-    __tablename__ = 'usuarios'
+class User(Base):
+    __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    nome = Column(String(100), nullable=False)
+    name = Column(String(100), nullable=False)
     email = Column(String(100), nullable=False, unique=True)
-    senha_hash = Column(String(255), nullable=False)
+    hashed_password = Column(String(255), nullable=False)
     status_delete = Column(Boolean, default=True)
 
-class Baralho(Base):
-    __tablename__ = 'baralhos'
+class Deck(Base):
+    __tablename__ = 'decks'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    usuario_id = Column(Integer, ForeignKey('usuarios.id'), ondelete='SET NULL')
-    nome = Column(String(100), nullable=False)
-    topico = Column(String(100))
-    descricao = Column(String)
+    user_id = Column(Integer, ForeignKey('usuarios.id'), ondelete='SET NULL')
+    name = Column(String(100), nullable=False)
+    topic = Column(String(100))
+    description = Column(String)
     status_delete = Column(Boolean, default=True)
 
 class Card(Base):
     __tablename__ = 'cards'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    baralho_id = Column(Integer, ForeignKey('baralhos.id'))
-    pergunta = Column(String)
-    resposta = Column(String)
+    deck_id = Column(Integer, ForeignKey('baralhos.id'))
+    question = Column(String)
+    answer = Column(String)
     status_delete = Column(Boolean, default=True)

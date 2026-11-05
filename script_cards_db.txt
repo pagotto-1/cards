@@ -2,42 +2,42 @@ CREATE DATABASE IF NOT EXISTS cards_db;
 
 USE cards_db;
 
-CREATE TABLE IF NOT EXISTS usuarios (
+CREATE TABLE IF NOT EXISTS users (
 	id 				INT AUTO_INCREMENT PRIMARY KEY,
 
-    nome 			VARCHAR(100) NOT NULL,
+    name 			VARCHAR(100) NOT NULL,
     email 			VARCHAR(100) NOT NULL UNIQUE,
-    senha_hash 		VARCHAR(255) NOT NULL,
+    hashed_password VARCHAR(255) NOT NULL,
 
     status_delete 	BOOL DEFAULT 1
 );
 
-CREATE TABLE IF NOT EXISTS baralhos (
+CREATE TABLE IF NOT EXISTS decks (
 	id 				INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id		INT,
+    user_id 		INT,
 
-    nome 			VARCHAR(100) NOT NULL,
-    topico 			VARCHAR(100),
-    descricao 		TEXT,
+    name 			VARCHAR(100) NOT NULL,
+    topic 			VARCHAR(100),
+    description 	TEXT,
 
     status_delete 	BOOL DEFAULT 1,
 
-    CONSTRAINT fk_baralho_usuario
-		FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+    CONSTRAINT fk_deck_user
+		FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS cards (
 	id 				INT AUTO_INCREMENT PRIMARY KEY,
-    baralho_id 		INT,
+    deck_id 		INT,
 
-    pergunta 		TEXT,
-    resposta 		TEXT,
+    question 		TEXT,
+    answer   		TEXT,
 
     status_delete 	BOOL DEFAULT 1,
 
-    CONSTRAINT fk_card_baralho
-		FOREIGN KEY (baralho_id) REFERENCES baralho(id)
+    CONSTRAINT fk_card_deck
+		FOREIGN KEY (deck_id) REFERENCES decks(id)
         ON DELETE SET NULL
         ON UPDATE CASCADE
 );
