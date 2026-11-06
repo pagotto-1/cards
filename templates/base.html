@@ -12,26 +12,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+{% if request.endpoint != 'login' %}
     <header>
-        {% if request.endpoint != 'login' %}
             <div class="menu">
-                <span class="logo">
+                <a href="{{ url_for('home') }}" class="logo">
                     <h1>FlashCards</h1>
                     <img src="{{ url_for('static', filename='images/icons/cards-deck.png') }}" alt="Cards Deck" class="icon">
-                </span>
+                </a>
                 <div class="container-menu-buttons">
                     <a href="" class="menu-button">Decks</a>
                     <a href="" class="menu-button">Cards</a>
                     <a href="" class="menu-button">Account</a>
                 </div>
             </div>
-        {% endif %}
     </header>
+{% endif %}
     <main>
         {% block content %}{% endblock %}
     </main>
+{% if request.endpoint != 'login' %}
     <footer>
         {# TODO: Create footer #}
     </footer>
+{% endif %}
 </body>
 </html>

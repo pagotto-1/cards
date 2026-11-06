@@ -5,15 +5,21 @@
 }
 
 :root {
-    --color-menu-background: #a30000;
-    --color-menu-text: #fcc;
+    --primary-color: #a30000;
+    --primary-color-dark: #800;
+    --secondary-color: #fcc;
+    --secondary-color-dark: #c88;
 
-    --font-menu: 'Poppins';
-    --font-default: sans-serif;
+    --font-ui: 'Poppins';
 }
 
+/* BODY AND OTHER GENERIC ELEMENTS */
 body {
 
+}
+
+.title {
+    font-family: var(--font-ui), sans-serif;
 }
 
 /* HEADER AND MENU */
@@ -31,10 +37,10 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    background-color: var(--color-menu-background);
-    color: var(--color-menu-text);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 
-    font-family: var(--font-menu), var(--font-default);
+    font-family: var(--font-ui), sans-serif;
 }
 
 .menu .logo {
@@ -46,16 +52,68 @@ header {
     align-items: center;
     justify-content: center;
     gap: 1vw;
+
+    text-decoration: none;
+    color: var(--secondary-color);
 }
 
 .menu .container-menu-buttons {
-    height: 75%;
+    height: 100%;
     width: 50%;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+
+    margin: 0 2vw 0 0;
+
+    font-weight: bold;
+}
+
+.menu .container-menu-buttons .menu-button {
+    height: 100%;
+    width: 33%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: var(--secondary-color);
+
+    transition: all ease .25s;
+}
+
+.menu .container-menu-buttons .menu-button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* FORMS */
+.form-page {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary-color);
+}
+
+.form-panel {
+    height: 90%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    border-radius: 1vh;
+
+    background-color: var(--secondary-color);
 }
 
 /* ICONS */

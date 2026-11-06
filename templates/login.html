@@ -3,5 +3,13 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    
+    <div class="form-page">
+        <section class="form-panel">
+            {% if register_user %}
+                <h2 class="title">REGISTER</h2>
+            {% else %}
+                <h2 class="title">LOGIN</h2>
+            {% endif %}
+        </section>
+    </div>
 {% endblock %}
