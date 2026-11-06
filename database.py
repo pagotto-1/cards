@@ -31,7 +31,7 @@ class Deck(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('users.id', ondelete='SET NULL'))
-    username = Column(String(100), nullable=False)
+    name = Column(String(100), nullable=False)
     topic = Column(String(100))
     description = Column(String)
     status_delete = Column(Boolean, default=True)

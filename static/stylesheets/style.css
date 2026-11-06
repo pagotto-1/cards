@@ -10,6 +10,8 @@
     --secondary-color: #fcc;
     --secondary-color-dark: #c88;
 
+    --color-input-text: #300;
+
     --font-ui: 'Poppins';
 }
 
@@ -19,7 +21,23 @@ body {
 }
 
 .title {
+    margin: 3vh;
+
     font-family: var(--font-ui), sans-serif;
+}
+
+.button {
+    display: inline-block;
+
+    border: none;
+
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    text-decoration: none;
+    font-size: 1rem;
+
+    cursor: pointer;
 }
 
 /* HEADER AND MENU */
@@ -43,7 +61,7 @@ header {
     font-family: var(--font-ui), sans-serif;
 }
 
-.menu .logo {
+.logo {
     height: 75%;
     width: 25%;
 
@@ -57,7 +75,7 @@ header {
     color: var(--secondary-color);
 }
 
-.menu .container-menu-buttons {
+.container-menu-buttons {
     height: 100%;
     width: 50%;
 
@@ -71,7 +89,7 @@ header {
     font-weight: bold;
 }
 
-.menu .container-menu-buttons .menu-button {
+.menu-button {
     height: 100%;
     width: 33%;
 
@@ -86,7 +104,7 @@ header {
     transition: all ease .25s;
 }
 
-.menu .container-menu-buttons .menu-button:hover {
+.menu-button:hover {
     background-color: var(--primary-color-dark);
 }
 
@@ -100,10 +118,13 @@ header {
     justify-content: center;
 
     background-color: var(--primary-color);
+    color: var(--primary-color-dark);
+
+    font-family: var(--font-ui), sans-serif;
 }
 
 .form-panel {
-    height: 90%;
+    height: 50%;
     width: 50%;
 
     display: flex;
@@ -114,6 +135,63 @@ header {
     border-radius: 1vh;
 
     background-color: var(--secondary-color);
+}
+
+.form-field {
+    max-height: 12vh;
+    width: 50%;
+
+    flex: 1;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+}
+
+.login-button {
+    height: 4vh;
+    width: 20vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 1vh;
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+label {
+    display: block;
+
+    font-weight: 600;
+}
+
+input {
+    height: 4vh;
+    width: 100%;
+
+    border: 0.05vw solid var(--primary-color-dark);
+    border-radius: 1vh;
+
+    background-color: var(--secondary-color);
+    color: var(--color-input-text);
 }
 
 /* ICONS */

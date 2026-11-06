@@ -9,6 +9,20 @@
                 <h2 class="title">REGISTER</h2>
             {% else %}
                 <h2 class="title">LOGIN</h2>
+                <form method="post" action="">
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="button login-button">LOGIN</button>
+                        <a href="" class="button login-button">Already have an account?</a>
+                    </div>
+                </form>
             {% endif %}
         </section>
     </div>
